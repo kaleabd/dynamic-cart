@@ -1,19 +1,32 @@
 import { useState } from "react";
 import { CardProps } from "./CardList";
 import './PopWindow.css'
+import { useCardStore } from "../store/UseCardStore";
 
 type Props = {
-  cardProps: CardProps | null;
-};
+    cardProps: CardProps;
+    data: () => void;
+  };
+  
+  export const PopWindow = ({cardProps, data}: Props) => {
+      const [selectedColor, setSelectedColor] = useState<string>('black')
+      const [selectedBtn, setSelectedBtn] = useState(false)
+      const {addCarts} =useCardStore()
 
-export const PopWindow = ({cardProps}: Props) => {
-    const [selectedColor, setSelectedColor] = useState<string>('black')
-    const [selectedBtn, setSelectedBtn] = useState(false)
 
-    const handleColor = (color: string) => {
-        setSelectedColor(color)
+      const handleColor = (color: string) => {
+          setSelectedColor(color)
         setSelectedBtn(true)
     }
+    const handleCart = () => {
+        addCarts({
+          id: cardProps.id,
+          title: cardProps.title,
+          description: cardProps.description
+        });
+        data();
+      };
+      
     return(
         <div className="module">
             <div className="module-container">
@@ -27,7 +40,9 @@ export const PopWindow = ({cardProps}: Props) => {
                     <h2 style={{color: `${selectedColor}`}}>
                         desc: {cardProps?.description}
                     </h2>
-                    <button>Add to cart</button>
+                    <button onClick={handleCart}>
+                        Add to cart
+                    </button>
                 </div>
             </div>
         </div>

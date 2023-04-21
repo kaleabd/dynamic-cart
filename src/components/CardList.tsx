@@ -14,7 +14,7 @@ type Props = {
 
 const CardList = ({ cards }: Props) => {
     const [showModule, setShowModule] = useState<boolean>(false)
-    const [selectedCard, setSelectedCard] = useState<CardProps | null>(null)
+    const [selectedCard, setSelectedCard] = useState<CardProps>({} as CardProps)
 
 
   const handleCardClick = (card: CardProps) => {
@@ -25,6 +25,10 @@ const CardList = ({ cards }: Props) => {
     })
     setShowModule(true);
   };
+
+  const passToCart = () => {
+    setShowModule(false)
+  }
 
   return (
     <>
@@ -39,10 +43,9 @@ const CardList = ({ cards }: Props) => {
         </div>
         {showModule && (
             <>
-                <PopWindow cardProps={selectedCard}/>
+                <PopWindow cardProps={selectedCard} data={passToCart}/>
                 <div className="overlay"></div>
-                <button onClick={() => setShowModule(false)} className="close-btn">X</button>
-                
+                <button onClick={passToCart} className="close-btn">X</button>
             </>
 
         )}
