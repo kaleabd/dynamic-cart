@@ -1,0 +1,21 @@
+.color-options{
+    display: flex;
+    gap: 2rem;
+}
+.module-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+}
+.red{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: red;
+}
+.blue{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: blue;
+}
