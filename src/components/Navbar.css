@@ -20,3 +20,19 @@
     text-decoration: underline;
     cursor: pointer;
 }
+.cart-note{
+    position: relative;
+    display: flex;
+}
+.cart-counter{
+    position: absolute;
+    top: -.7rem;
+    left: 100%;
+    background-color: red;
+    padding: .2rem .5rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: 900;
+    color: white;
+    transform: scale(70%);
+}
