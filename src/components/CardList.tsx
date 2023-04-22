@@ -3,10 +3,12 @@ import './CardLits.css'
 import { PopWindow } from "./PopWindow";
 
 export type CardProps = {
-  id: number;
-  title: string;
-  description: string;
-};
+  id: number,
+  title: string,
+  description: string
+  image: React.ReactNode, // as this is svg files
+  price: number,
+}
 
 type Props = {
   cards: CardProps[];
@@ -21,7 +23,9 @@ const CardList = ({ cards }: Props) => {
     setSelectedCard({
         id: card.id,
         title: card.title,
-        description: card.description
+        description: card.description,
+        image: card.image,
+        price: card.price,
     })
     setShowModule(true);
   };
@@ -35,9 +39,11 @@ const CardList = ({ cards }: Props) => {
         <div className='main-container'>
             {cards.map((card) => (
                 <div key={card.id}>
-                <h3>{card.title}</h3>
-                <p>{card.description}</p>
-                <button onClick={() => handleCardClick(card)}>Select Card</button>
+                  {card.image}
+                  <h3>{card.title}</h3>
+                  <p>{card.description}</p>
+                  <p>{card.price}$</p>
+                  <button onClick={() => handleCardClick(card)}>Select Card</button>
                 </div>
             ))}
         </div>

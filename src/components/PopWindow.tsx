@@ -2,7 +2,6 @@ import { useState } from "react";
 import { CardProps } from "./CardList";
 import './PopWindow.css'
 import { useCardStore } from "../store/UseCardStore";
-import Icon from '../assets/react.svg'
 
 type Props = {
     cardProps: CardProps;
@@ -21,9 +20,11 @@ type Props = {
     }
     const handleCart = () => {
         addCarts({
-          id: cardProps.id,
-          title: cardProps.title,
-          description: cardProps.description
+            id: cardProps.id,
+            title: cardProps.title,
+            description: cardProps.description,
+            image: cardProps.image,
+            price: cardProps.price,
         });
         data();
       };
@@ -33,8 +34,8 @@ type Props = {
             <div className="module-container">
                 <div className="left-container">
                     <h2 className="title">{cardProps?.title}</h2>
-                    <img src={Icon} alt="react logo" />
-                    <h2>Price <span className="title">230$</span></h2>
+                    {cardProps?.image}
+                    <h2>Price <span className="title">{cardProps.price}$</span></h2>
                 </div>
                 <div className="right-containter">
                     <div>

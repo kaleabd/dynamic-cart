@@ -1,0 +1,11 @@
+goodproperties = {
+    title: string,
+    desc: string
+    image: React.ReactNode, // as this is svg files
+    price: number,
+}
+
+interface goodproperties extends addtocart {
+    colors: string,
+    size: string,
+}

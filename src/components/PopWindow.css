@@ -5,8 +5,8 @@
 .module-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    place-items: center;
-    gap: 3rem;
+    gap: 15%;
+    
 }
 .red{
     width: 30px;
