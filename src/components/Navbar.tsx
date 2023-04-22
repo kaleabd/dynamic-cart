@@ -9,13 +9,12 @@ export const Navbar = () => {
         <div className='nav'>
             <h1>Congo-Shop</h1>
             <ul>
-                <li>Home</li>
+                <Link to="/" className='link'>Home</Link>
                 <div className='cart-note'>
-                    <Link to="/cart">Cart</Link>
+                    <Link to="/cart" className='link'>Cart</Link>
                     <div className='cart-counter'>{carts.length}</div>
                 </div>
-                
-                <li>Contactus</li>
+                <Link to="/contactus" className='link'>Contact Us</Link>
             </ul>
         </div>
     )

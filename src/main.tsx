@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import Cart from './pages/Cart.tsx';
+import { Contactus } from './pages/Contactus.tsx';
 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <Routes>
         <Route path='/' element={<App />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/contactus" element={<Contactus />} />
       </Routes>
     </BrowserRouter>
     

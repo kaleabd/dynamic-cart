@@ -6,6 +6,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center;
+    gap: 3rem;
 }
 .red{
     width: 30px;
@@ -18,4 +19,30 @@
     height: 30px;
     border-radius: 50%;
     background-color: blue;
+}
+.left-container,.right-containter{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.left-container img{
+    width: 150px;
+    border: 1px solid black;
+    padding: .7rem;
+}
+.title{
+    font-size: 1rem;
+}
+.size-btn{
+    display: flex;
+    gap: 1rem;
+}
+.size-btn button{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.addcart-btn{
+    padding: .5rem 0;
 }

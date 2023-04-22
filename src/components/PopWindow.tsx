@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CardProps } from "./CardList";
 import './PopWindow.css'
 import { useCardStore } from "../store/UseCardStore";
+import Icon from '../assets/react.svg'
 
 type Props = {
     cardProps: CardProps;
@@ -27,22 +28,33 @@ type Props = {
         data();
       };
       
-    return(
+      return(
         <div className="module">
             <div className="module-container">
-                <div className="color-options">
-                    <button className="red"  onClick={() => handleColor("red")} style={{border: `${selectedBtn && selectedColor === "red" ? '' : 'none'}`}}></button>
-                    <button className="blue" onClick={() => handleColor("blue")} style={{border: `${selectedBtn && selectedColor === "blue" ? '' : 'none'}`}}></button>
+                <div className="left-container">
+                    <h2 className="title">{cardProps?.title}</h2>
+                    <img src={Icon} alt="react logo" />
+                    <h2>Price <span className="title">230$</span></h2>
                 </div>
-                <div>
-                    <h2 style={{color: `${selectedColor}`}}>title: {cardProps?.title}</h2>
-                    <br />
-                    <h2 style={{color: `${selectedColor}`}}>
-                        desc: {cardProps?.description}
-                    </h2>
-                    <button onClick={handleCart}>
-                        Add to cart
-                    </button>
+                <div className="right-containter">
+                    <div>
+                        <h2>Colors</h2>
+                        <div className="color-options">
+                            <button className="red"  onClick={() => handleColor("red")} style={{border: `${selectedBtn && selectedColor === "red" ? '' : 'none'}`}}></button>
+                            <button className="blue" onClick={() => handleColor("blue")} style={{border: `${selectedBtn && selectedColor === "blue" ? '' : 'none'}`}}></button>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>Sizes</h2>
+                        <div className="size-btn">
+                            <button>xl</button>
+                            <button>lg</button>
+                            <button>md</button>
+                            <button>sm</button>
+                        </div>
+                    </div>
+                    {/* <h2 style={{color: `${selectedColor}`}}>title: {cardProps?.title}</h2> */}
+                    <button onClick={handleCart} className="addcart-btn">Add to cart</button>
                 </div>
             </div>
         </div>

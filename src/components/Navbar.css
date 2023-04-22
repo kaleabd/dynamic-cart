@@ -11,12 +11,13 @@
     align-items: center;
     gap: 2rem;
 }
-.nav ul li {
+.link {
     text-decoration: none;
     list-style: none;
+    color: black;
 }
 
-.nav ul li:hover{
+.link:hover{
     text-decoration: underline;
     cursor: pointer;
 }
