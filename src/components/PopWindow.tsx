@@ -19,6 +19,7 @@ type Props = {
         setSelectedBtn(true)
     }
     const handleCart = () => {
+        // i've to add the amount of the components in the cart kinda thing
         addCarts({
             id: cardProps.id,
             title: cardProps.title,
